@@ -162,6 +162,8 @@
     left: 30px;
     top: -15px;
     transform: rotate(45deg);
+    -webkit-clip-path: polygon(0px 0px, 100% 0%, 0% 100%);
+    clip-path: polygon(0px 0px, 100% 0%, 0% 100%);
 }
 .thingy-popup.blue .balloon {
     border-color: #2C91DE transparent;
