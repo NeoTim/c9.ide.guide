@@ -325,7 +325,7 @@ TODO
                             while (thingies[++idx] && !thingies[idx].thingy) {}
                         }
                         if (!thingies[idx] || thingies[idx].thingy.style.display == "none") 
-                            return hide();
+                            return hidePopup();
                         
                         showPopup(thingies[idx]);
                     }
@@ -393,7 +393,7 @@ TODO
                     if (def.thingy && !currentPopup)
                         showPopup(def);
                 }
-                else if (!def.el.offsetHeight && !def.el.offsetWidth) {
+                else if (def.el && !def.el.offsetHeight && !def.el.offsetWidth) {
                     if (currentPopup == def)
                         hidePopup();
                         
