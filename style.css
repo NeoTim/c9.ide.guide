@@ -160,7 +160,7 @@
     z-index: 0;
     border-color: white transparent;
     left: 30px;
-    top: -15px;
+    top: -14px;
     transform: rotate(45deg);
     -webkit-clip-path: polygon(0px 0px, 100% 0%, 0% 100%);
     clip-path: polygon(0px 0px, 100% 0%, 0% 100%);
@@ -181,18 +181,18 @@
 .thingy-popup.balloon-bottom .balloon {
     left: 30px;
     top: auto;
-    bottom: -15px;
+    bottom: -14px;
     transform: rotate(225deg);
 }
 
 .thingy-popup.balloon-left .balloon {
-    left: -15px;
+    left: -14px;
     top: 30px;
     transform: rotate(-45deg);
 }
 
-.thingy-popup.balloon-right .balloon {
-    right: -15px;
+.thingy-po4up.balloon-right .balloon {
+    right: -14px;
     left: auto;
     top: 30px;
     transform: rotate(-225deg);
