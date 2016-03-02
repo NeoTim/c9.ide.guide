@@ -8,9 +8,12 @@ define(function(require, exports, module) {
 
 // To test this run https://ide.c9.io/bradydowling/guided-tour?debug=2&debug=1
 /*
+BUGS
+- [ ] start tour. complete tour. start tour. open terminal. terminal is no longer part of tour.
+- [ ] start tour. complete tour. start tour. + thingy no longer slides to correct position.
 TODO
-- [ ] Add doc links
-- [ ] Fix z-index
+- [x] Add doc links
+- [x] Fix z-index
 - [x] Pulsate thingies
 - [x] Add content
 - [x] Show guide only on first workspace open
@@ -56,30 +59,21 @@ TODO
                 query: ".workspace", width: 340, attachment: LEFT, where: RIGHT, wherePopup: RIGHT | BOTTOM,
                 color: "blue",
                 title: "Manage and upload files & folders", 
-                body: "Here's where all of your project files are. Double click a file to open it and right click for additional options. You can also create, delete, and move files around. <br /><br />Click the settings icon in the top right corner of the Workspace panel for additional options. Drag and drop to upload files and download them by right-clicking." 
+                body: "Here's where all of your project files are. Double click a file to open it and right click for additional options. You can also create, delete, and move files around. <br /><br />Click the settings icon in the top right corner of the Workspace panel for additional options. Drag and drop to upload files and download them by right-clicking.<br /><br /><a href='https://docs.c9.io/docs/file-revision-history' target='_blank'>Read about Restoring Older Versions of Files</a>" 
             },
             // "Navigate", 
             { 
                 query: ".navigate", width: 300, attachment: LEFT, where: RIGHT, 
                 color: "green",
                 title: "Quickly navigate to files", 
-                body: "The Navigate panel allows for quick searching and opening of files. Use Cmd-E to open the panel then navigate to any file in the file system by typing part of the filename or path." 
-            },
-            // "File", 
-            { 
-                query: function(){ return menus.get("File").item.$ext; }, 
-                color: "blue",
-                width: 300, attachment: TOP, where: BOTTOM, 
-                title: "File Menu", 
-                
-                body: "Get rich quick!" 
+                body: "The Navigate panel allows for quick searching and opening of files. Use Cmd-E to open the panel then navigate to any file in the file system by typing part of the filename or path.<br /><br /><a href='https://docs.c9.io/docs/navigate' target='_blank'>More Info about the Navigate Panel</a>" 
             },
             // "New Tab", 
             { 
                 query: ".plus_tab_button", width: 360, attachment: LEFT, where: RIGHT | BOTTOM, 
                 color: "green",
                 title: "Open a file, terminal, or recent tabs", 
-                body: "Click the plus button to open a new tab for a file or terminal instance. You can also open an immediate window for testing Javascript expressions or reopen recently closed tabs." 
+                body: "Click the plus button to open a new tab for a file or terminal instance. You can also open an immediate window for testing Javascript expressions or reopen recently closed tabs.<br /><br /><a href='https://docs.c9.io/docs/immediate-window' target='_blank'>More Info about the Immediate Window</a>" 
             },
             // "Terminal", 
             { 
@@ -91,56 +85,56 @@ TODO
                     return t.aml.$button;
                 }, width: 300, attachment: BOTTOM, where: TOP, title: "Full Linux terminal", 
                 color: "blue",
-                body: "With full sudo access in the terminal, you can create files, run code, and install software. Open a new terminal at any time with Alt + T." 
+                body: "With full sudo access in the terminal, you can create files, run code, and install software. Open a new terminal at any time with Alt + T.<br /><br /><a href='https://docs.c9.io/docs/terminal' target='_blank'>More Info about the Terminal</a>" 
             },
             // "Preview", 
             { 
                 query: ".preview", width: 350, attachment: TOP, where: BOTTOM, 
                 color: "orange",
                 title: "Preview your app as you code", 
-                body: "Click Preview to open the current file in a raw preview, like for HTML or Markdown, or to see it as it's running on the server. To preview your running application, you'll need to first run it with the Run button or by executing a command from the terminal." 
+                body: "Click Preview to open the current file in a raw preview, like for HTML or Markdown, or to see it as it's running on the server. To preview your running application, you'll need to first run it with the Run button or by executing a command from the terminal.<br /><br /><a href='https://docs.c9.io/docs/run-an-application#section--pre-view-your-application' target='_blank'>More Info on Previewing Your Application</a>" 
             },
             // "Run", 
             { 
                 query: ".runbtn", width: 300, attachment: TOP, where: BOTTOM, 
                 color: "green",
                 title: "Run your app or file", 
-                body: "Running from here will always run your app on port 8080 and use the default run configuration for the file or type of project you're using. Once it's running, view your app by clicking Preview or by going straight to your application URL (found in the Share dialogue)." 
+                body: "Running from here will always run your app on port 8080 and use the default run configuration for the file or type of project you're using. Once it's running, view your app by clicking Preview or by going straight to your application URL (found in the Share dialogue).<br /><br /><a href='https://docs.c9.io/docs/running-and-debugging-code' target='_blank'>More Info on Running Your Application</a>" 
             },
             // "Share", 
             { 
                 query: ".c9-share", width: 300, attachment: TOP | LEFT, where: BOTTOM | LEFT, 
                 color: "orange",
                 title: "Share your work with anyone", 
-                body: "Click here to invite others to view or edit your code. Here you'll also find your application URL, which you can use to view or share your running app." 
+                body: "Click here to invite others to view or edit your code. Here you'll also find your application URL, which you can use to view or share your running app.<br /><br /><a href='https://docs.c9.io/docs/share-a-workspace' target='_blank'>More Info on Sharing a Workspace</a>" 
             },
             // "Collaborate", 
             { 
                 query: ".collab", width: 400, attachment: RIGHT, where: LEFT, 
                 color: "orange",
                 title: "Follow and chat with other collaborators", 
-                body: "From the Collaboration panel, you can control all users' access to the workspace, see what files users are working on, and use real-time chat." 
+                body: "From the Collaboration panel, you can control all users' access to the workspace, see what files users are working on, and use real-time chat.<br /><br /><a href='https://docs.c9.io/docs/share-a-workspace' target='_blank'>More Info on Sharing a Workspace</a>" 
             },
             // "Outline", 
             { 
                 query: ".outline", width: 320, attachment: RIGHT, where: LEFT, 
                 color: "blue",
                 title: "File functions list and structure", 
-                body: "The Outline panel shows you a full list of all function calls and definitions in your file so you can quickly navigate through your file without having to read every line of code." 
+                body: "The Outline panel shows you a full list of all function calls and definitions in your file so you can quickly navigate through your file without having to read every line of code. The outline view has support for over a dozen languages.<br /><br /><a href='https://docs.c9.io/docs/supported-languages' target='_blank'>See All Supported Languages</a>" 
             },
             // "Debugger", 
             { 
                 query: ".debugger", width: 320, attachment: RIGHT, where: LEFT, 
                 color: "green",
                 title: "Built-in step-through debugging", 
-                body: "Set a breakpoint in a Node.js or PHP file by clicking next to the appropriate line number in your file. Then when you run your program, the debug panel will open up and you can see what variables are set and execute your code one line at a time."
+                body: "Set a breakpoint in a Node.js or PHP file by clicking next to the appropriate line number in your file. Then when you run your program, the debug panel will open up and you can see what variables are set and execute your code one line at a time. <br /><br /><a href='https://docs.c9.io/docs/debugging-your-code' target='_blank'>More Debugging Info</a>"
             },
             // Preview Pane - Preview Chooser 
             { 
                 query: ".btn-preview-choice", width: 340, attachment: TOP, where: BOTTOM, 
                 color: "green",
                 title: "Preview your files in various ways", 
-                body: "When previewing your application, you may choose from a variety of different browsers to test your application in."
+                body: "When previewing your application, you may choose from a variety of different browsers to test your application in.<br /><br /><a href='https://docs.c9.io/docs/browser-testing' target='_blank'>More Info on Testing in Different Browsers</a>"
             }
         ];
 
