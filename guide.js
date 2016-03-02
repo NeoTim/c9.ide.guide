@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
     main.consumes = [
         "Plugin", "ui", "commands", "menus", "preferences", "settings",
-        "tabManager"
+        "tabManager", "c9"
     ];
     main.provides = ["guide"];
     return main;
@@ -28,6 +28,7 @@ TODO
         var commands = imports.commands;
         var settings = imports.settings;
         var tabManager = imports.tabManager;
+        var c9 = imports.c9;
         var prefs = imports.preferences;
         
         /***** Initialization *****/
@@ -136,9 +137,9 @@ TODO
             },
             // Preview Pane - Preview Chooser 
             { 
-                query: ".btn-preview-choice", width: 300, attachment: TOP, where: BOTTOM, 
-                color: "blue",
-                title: "Choose how to preview your content", 
+                query: ".btn-preview-choice", width: 340, attachment: TOP, where: BOTTOM, 
+                color: "green",
+                title: "Preview your files in various ways", 
                 body: "When previewing your application, you may choose from a variety of different browsers to test your application in."
             }
         ];
@@ -426,6 +427,9 @@ TODO
         }
 
         function show() {
+            if (!c9.isReady) 
+                return c9.on("ready", function(){ setTimeout(show); });
+            
             draw();
 
             thingies.forEach(function(def){
