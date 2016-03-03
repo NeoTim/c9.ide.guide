@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
     main.consumes = [
-        "Plugin", "ui", "commands", "menus", "preferences", "settings",
+        "Plugin", "ui", "commands", "menus", "preferences", "settings", "info",
         "tabManager", "c9"
     ];
     main.provides = ["guide"];
@@ -22,6 +22,7 @@ BUGS
         var tabManager = imports.tabManager;
         var c9 = imports.c9;
         var prefs = imports.preferences;
+        var info = imports.info;
         
         /***** Initialization *****/
 
@@ -135,9 +136,8 @@ BUGS
             settings.on("read", function(){
                 settings.setDefaults("user/tour", [["complete", false]]);
                 
-                // && info.getUser().date_added < today
-                // TODO Disable this before deploying
-                if (!settings.getBool("user/tour/@complete") || true)
+                var dateGuideDeployed = new Date(2015, 3, 3).getTime();
+                if (!settings.getBool("user/tour/@complete") && info.getUser().date_add > dateGuideDeployed)
                     show();
             });
         }
@@ -268,11 +268,9 @@ BUGS
             thingy.onclick = function(){ togglePopup(def); };
             
             def.body = def.body.replace(/\$\{key:([a-zA-Z]+)\}/g, function(match, name) {
-                console.log(match);
                 var key = commands.getHotkey(name);
                 if (commands.platform == "mac")
                     key = apf.hotkeys.toMacNotation(key);
-                console.log(key);
                return key;
             });
             
