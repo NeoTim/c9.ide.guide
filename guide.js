@@ -65,7 +65,7 @@ TODO
                 query: ".navigate", width: 300, attachment: LEFT, where: RIGHT, 
                 color: "green",
                 title: "Quickly navigate to files", 
-                body: "The Navigate panel allows for quick searching and opening of files. Use Cmd-E to open the panel then navigate to any file in the file system by typing part of the filename or path.<br /><br /><a href='https://docs.c9.io/docs/navigate' target='_blank'>More about the Navigate Panel</a>" 
+                body: "The Navigate panel allows for quick searching and opening of files. Use ${key:navigate} to open the panel then navigate to any file in the file system by typing part of the filename or path.<br /><br /><a href='https://docs.c9.io/docs/navigate' target='_blank'>More about the Navigate Panel</a>" 
             },
             // "New Tab", 
             { 
@@ -84,7 +84,7 @@ TODO
                     return t.aml.$button;
                 }, width: 300, attachment: BOTTOM, where: TOP, title: "Full Linux terminal", 
                 color: "blue",
-                body: "With full sudo access in the terminal, you can create files, run code, and install software. Open a new terminal at any time with Alt + T.<br /><br /><a href='https://docs.c9.io/docs/terminal' target='_blank'>More about the Terminal</a>" 
+                body: "With full sudo access in the terminal, you can create files, run code, and install software. Open a new terminal at any time with ${key:openterminal}.<br /><br /><a href='https://docs.c9.io/docs/terminal' target='_blank'>More about the Terminal</a>" 
             },
             // "Preview", 
             { 
@@ -275,6 +275,15 @@ TODO
             setPosition(thingy, pos, def, THINGY_SIZE, THINGY_SIZE, THINGY_MARGIN, true);
             
             thingy.onclick = function(){ togglePopup(def); };
+            
+            def.body = def.body.replace(/\$\{key:([a-zA-Z]+)\}/g, function(match, name) {
+                console.log(match);
+                var key = commands.getHotkey(name);
+                if (commands.platform == "mac")
+                    key = apf.hotkeys.toMacNotation(key);
+                console.log(key);
+               return key;
+            });
             
             def.el = el;
             def.thingy = thingy;
