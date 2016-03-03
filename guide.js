@@ -119,7 +119,7 @@ TODO
                 query: ".outline", width: 320, attachment: RIGHT, where: LEFT, 
                 color: "blue",
                 title: "File functions list and structure", 
-                body: "The Outline panel shows you a full list of all function calls and definitions in your file so you can quickly navigate through your file without having to read every line of code. The outline view has support for over a dozen languages.<br /><br /><a href='https://docs.c9.io/docs/supported-languages' target='_blank'>See All Supported Languages</a>" 
+                body: "The Outline panel shows you a full list of all functions and definitions in your file so you can quickly navigate through your file without having to read every line of code. The outline view has support for over a dozen languages.<br /><br /><a href='https://docs.c9.io/docs/supported-languages' target='_blank'>See All Supported Languages</a>" 
             },
             // "Debugger", 
             { 
