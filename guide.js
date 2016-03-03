@@ -74,7 +74,7 @@ BUGS
                     return t.aml.$button;
                 }, width: 300, attachment: BOTTOM, where: TOP, title: "Full Linux terminal", 
                 color: "blue",
-                body: "With full sudo access in the terminal, you can create files, run code, and install software. Open a new terminal at any time with ${key:openterminal}.<br /><br /><a href='https://docs.c9.io/docs/terminal' target='_blank'>More about the Terminal</a>" 
+                body: "With full sudo access in the terminal, you can create files, run code, and install software. Open a new terminal at any time with ${key:openterminal}.<br /><br /><b>Pro Tip</b>: Your workspace layout is fully customizable, making split screen simple. Try dragging this terminal tab and dropping it all over the screen. This works for many tabs and many layouts.<br /><br /><a href='https://docs.c9.io/docs/terminal' target='_blank'>More about the Terminal</a>" 
             },
             // "Preview", 
             { 
