@@ -21,7 +21,6 @@ TODO
 - [x] Make sure thingy's disappear properly
 - [x] Update thingies when the UI changes
 ? When user gets to the last tip we could say done and reference the help menu with the guided tour
-? For each tip, we could have a Read More that links to docs or the community. Would this be worth taking them away from the workspace though?
 */
 
     function main(options, imports, register) {
@@ -59,7 +58,7 @@ TODO
                 query: ".workspace", width: 340, attachment: LEFT, where: RIGHT, wherePopup: RIGHT | BOTTOM,
                 color: "blue",
                 title: "Manage and upload files & folders", 
-                body: "Here's where all of your project files are. Double click a file to open it and right click for additional options. You can also create, delete, and move files around. <br /><br />Click the settings icon in the top right corner of the Workspace panel for additional options. Drag and drop to upload files and download them by right-clicking.<br /><br /><a href='https://docs.c9.io/docs/file-revision-history' target='_blank'>Read about Restoring Older Versions of Files</a>" 
+                body: "Here's where all of your project files are. Double click a file to open it and right click for additional options. You can also create, delete, and move files around. <br /><br />Click the settings icon in the top right corner of the Workspace panel for additional options. Drag and drop to upload files and download them by right-clicking.<br /><br /><a href='https://docs.c9.io/docs/file-revision-history' target='_blank'>Read about Restoring Deleted Files</a>" 
             },
             // "Navigate", 
             { 
@@ -127,7 +126,7 @@ TODO
                 query: ".debugger", width: 320, attachment: RIGHT, where: LEFT, 
                 color: "green",
                 title: "Built-in step-through debugging", 
-                body: "Set a breakpoint in a Node.js or PHP file by clicking next to the appropriate line number in your file. Then when you run your program, the debug panel will open up and you can see what variables are set and execute your code one line at a time. <br /><br /><a href='https://docs.c9.io/docs/debugging-your-code' target='_blank'>More about Debugging</a>"
+                body: "Set a breakpoint in a Node, PHP, Go, or C++ file by clicking next to the appropriate line number in your file. Then when you run your program, the debug panel will open up and you can see what variables are set and execute your code one line at a time. <br /><br /><a href='https://docs.c9.io/docs/debugging-your-code' target='_blank'>More about Debugging</a>"
             },
             // Preview Pane - Preview Chooser 
             { 
