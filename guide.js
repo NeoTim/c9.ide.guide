@@ -11,16 +11,6 @@ define(function(require, exports, module) {
 BUGS
 - [ ] start tour. complete tour. start tour. open terminal. terminal is no longer part of tour.
 - [ ] start tour. complete tour. start tour. + thingy no longer slides to correct position.
-TODO
-- [x] Add doc links
-- [x] Fix z-index
-- [x] Pulsate thingies
-- [x] Add content
-- [x] Show guide only on first workspace open
-- [x] Arrow to show a speech bubble
-- [x] Make sure thingy's disappear properly
-- [x] Update thingies when the UI changes
-? When user gets to the last tip we could say done and reference the help menu with the guided tour
 */
 
     function main(options, imports, register) {
@@ -119,7 +109,7 @@ TODO
                 query: ".outline", width: 320, attachment: RIGHT, where: LEFT, 
                 color: "blue",
                 title: "File functions list and structure", 
-                body: "The Outline panel shows you a full list of all functions and definitions in your file so you can quickly navigate through your file without having to read every line of code. The outline view has support for over a dozen languages.<br /><br /><a href='https://docs.c9.io/docs/supported-languages' target='_blank'>See All Supported Languages</a>" 
+                body: "The Outline panel shows a full list of functions and definitions in your file so you can quickly navigate through your file without reading every line of code. Use ${key:outline} to open the panel and navigate to any definition file system by typing part of the name. The outline view has support for over a dozen languages.<br /><br /><a href='https://docs.c9.io/docs/supported-languages' target='_blank'>See All Supported Languages</a>" 
             },
             // "Debugger", 
             { 
@@ -138,7 +128,7 @@ TODO
         ];
 
         function load() {
-            menus.addItemByPath("Support/Start Guided Tour", new ui.item({
+            menus.addItemByPath("Support/Show Guided Tour", new ui.item({
                 onclick: show,
             }), 150, plugin);
             
