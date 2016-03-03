@@ -66,14 +66,14 @@ TODO
                 query: ".navigate", width: 300, attachment: LEFT, where: RIGHT, 
                 color: "green",
                 title: "Quickly navigate to files", 
-                body: "The Navigate panel allows for quick searching and opening of files. Use Cmd-E to open the panel then navigate to any file in the file system by typing part of the filename or path.<br /><br /><a href='https://docs.c9.io/docs/navigate' target='_blank'>More Info about the Navigate Panel</a>" 
+                body: "The Navigate panel allows for quick searching and opening of files. Use Cmd-E to open the panel then navigate to any file in the file system by typing part of the filename or path.<br /><br /><a href='https://docs.c9.io/docs/navigate' target='_blank'>More about the Navigate Panel</a>" 
             },
             // "New Tab", 
             { 
                 query: ".plus_tab_button", width: 360, attachment: LEFT, where: RIGHT | BOTTOM, 
                 color: "green",
                 title: "Open a file, terminal, or recent tabs", 
-                body: "Click the plus button to open a new tab for a file or terminal instance. You can also open an immediate window for testing Javascript expressions or reopen recently closed tabs.<br /><br /><a href='https://docs.c9.io/docs/immediate-window' target='_blank'>More Info about the Immediate Window</a>" 
+                body: "Click the plus button to open a new tab for a file or terminal instance. You can also open an immediate window for testing Javascript expressions or reopen recently closed tabs.<br /><br /><a href='https://docs.c9.io/docs/immediate-window' target='_blank'>More about the Immediate Window</a>" 
             },
             // "Terminal", 
             { 
@@ -85,35 +85,35 @@ TODO
                     return t.aml.$button;
                 }, width: 300, attachment: BOTTOM, where: TOP, title: "Full Linux terminal", 
                 color: "blue",
-                body: "With full sudo access in the terminal, you can create files, run code, and install software. Open a new terminal at any time with Alt + T.<br /><br /><a href='https://docs.c9.io/docs/terminal' target='_blank'>More Info about the Terminal</a>" 
+                body: "With full sudo access in the terminal, you can create files, run code, and install software. Open a new terminal at any time with Alt + T.<br /><br /><a href='https://docs.c9.io/docs/terminal' target='_blank'>More about the Terminal</a>" 
             },
             // "Preview", 
             { 
                 query: ".preview", width: 350, attachment: TOP, where: BOTTOM, 
                 color: "orange",
                 title: "Preview your app as you code", 
-                body: "Click Preview to open the current file in a raw preview, like for HTML or Markdown, or to see it as it's running on the server. To preview your running application, you'll need to first run it with the Run button or by executing a command from the terminal.<br /><br /><a href='https://docs.c9.io/docs/run-an-application#section--pre-view-your-application' target='_blank'>More Info on Previewing Your Application</a>" 
+                body: "Click Preview to open the current file in a raw preview, like for HTML or Markdown, or to see it as it's running on the server. To preview your running application, you'll need to first run it with the Run button or by executing a command from the terminal.<br /><br /><a href='https://docs.c9.io/docs/run-an-application#section--pre-view-your-application' target='_blank'>More about Previewing Your Application</a>" 
             },
             // "Run", 
             { 
                 query: ".runbtn", width: 300, attachment: TOP, where: BOTTOM, 
                 color: "green",
                 title: "Run your app or file", 
-                body: "Running from here will always run your app on port 8080 and use the default run configuration for the file or type of project you're using. Once it's running, view your app by clicking Preview or by going straight to your application URL (found in the Share dialogue).<br /><br /><a href='https://docs.c9.io/docs/running-and-debugging-code' target='_blank'>More Info on Running Your Application</a>" 
+                body: "Running from here will always run your app on port 8080 and use the default run configuration for the file or type of project you're using. Once it's running, view your app by clicking Preview or by going straight to your application URL (found in the Share dialogue).<br /><br /><a href='https://docs.c9.io/docs/running-and-debugging-code' target='_blank'>More about Running Your Application</a>" 
             },
             // "Share", 
             { 
                 query: ".c9-share", width: 300, attachment: TOP | LEFT, where: BOTTOM | LEFT, 
                 color: "orange",
                 title: "Share your work with anyone", 
-                body: "Click here to invite others to view or edit your code. Here you'll also find your application URL, which you can use to view or share your running app.<br /><br /><a href='https://docs.c9.io/docs/share-a-workspace' target='_blank'>More Info on Sharing a Workspace</a>" 
+                body: "Click here to invite others to view or edit your code. Here you'll also find your application URL, which you can use to view or share your running app.<br /><br /><a href='https://docs.c9.io/docs/share-a-workspace' target='_blank'>More about Sharing a Workspace</a>" 
             },
             // "Collaborate", 
             { 
                 query: ".collab", width: 400, attachment: RIGHT, where: LEFT, 
                 color: "orange",
                 title: "Follow and chat with other collaborators", 
-                body: "From the Collaboration panel, you can control all users' access to the workspace, see what files users are working on, and use real-time chat.<br /><br /><a href='https://docs.c9.io/docs/share-a-workspace' target='_blank'>More Info on Sharing a Workspace</a>" 
+                body: "From the Collaboration panel, you can control all users' access to the workspace, see what files users are working on, and use real-time chat.<br /><br /><a href='https://docs.c9.io/docs/share-a-workspace' target='_blank'>More about Sharing a Workspace</a>" 
             },
             // "Outline", 
             { 
@@ -127,14 +127,14 @@ TODO
                 query: ".debugger", width: 320, attachment: RIGHT, where: LEFT, 
                 color: "green",
                 title: "Built-in step-through debugging", 
-                body: "Set a breakpoint in a Node.js or PHP file by clicking next to the appropriate line number in your file. Then when you run your program, the debug panel will open up and you can see what variables are set and execute your code one line at a time. <br /><br /><a href='https://docs.c9.io/docs/debugging-your-code' target='_blank'>More Debugging Info</a>"
+                body: "Set a breakpoint in a Node.js or PHP file by clicking next to the appropriate line number in your file. Then when you run your program, the debug panel will open up and you can see what variables are set and execute your code one line at a time. <br /><br /><a href='https://docs.c9.io/docs/debugging-your-code' target='_blank'>More about Debugging</a>"
             },
             // Preview Pane - Preview Chooser 
             { 
                 query: ".btn-preview-choice", width: 340, attachment: TOP, where: BOTTOM, 
                 color: "green",
                 title: "Preview your files in various ways", 
-                body: "When previewing your application, you may choose from a variety of different browsers to test your application in.<br /><br /><a href='https://docs.c9.io/docs/browser-testing' target='_blank'>More Info on Testing in Different Browsers</a>"
+                body: "When previewing your application, you may choose from a variety of different browsers to test your application in.<br /><br /><a href='https://docs.c9.io/docs/browser-testing' target='_blank'>More about Testing in Different Browsers</a>"
             }
         ];
 
