@@ -88,7 +88,7 @@ BUGS
                 query: ".runbtn", width: 300, attachment: TOP, where: BOTTOM, 
                 color: "green",
                 title: "Run your app or file", 
-                body: "Running from here will always run your app on port 8080 and use the default run configuration for the file or type of project you're using. Once it's running, view your app by clicking Preview or by going straight to your application URL (found in the Share dialogue).<br /><br /><a href='https://docs.c9.io/docs/running-and-debugging-code' target='_blank'>More about Running Your Application</a>" 
+                body: "Running from here will use the default run configuration for the file or type of project you're using. Always make sure to run your app on port 8080. Once it's running, view your app by clicking Preview or by going straight to your application URL (found in the Share dialogue).<br /><br /><a href='https://docs.c9.io/docs/running-and-debugging-code' target='_blank'>More about Running Your Application</a>" 
             },
             // "Share", 
             { 
@@ -135,6 +135,7 @@ BUGS
             settings.on("read", function(){
                 settings.setDefaults("user/tour", [["complete", false]]);
                 
+                // && info.getUser().date_added < today
                 // TODO Disable this before deploying
                 if (!settings.getBool("user/tour/@complete") || true)
                     show();
