@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
     main.consumes = [
-        "Plugin", "ui", "commands", "menus", "preferences", "settings", "info",
+        "Plugin", "ui", "commands", "menus", "preferences", "settings", "info", "c9.analytics",
         "tabManager", "c9"
     ];
     main.provides = ["guide"];
@@ -22,6 +22,7 @@ BUGS
         var c9 = imports.c9;
         var prefs = imports.preferences;
         var info = imports.info;
+        var analytics = imports["c9.analytics"];
         
         /***** Initialization *****/
 
@@ -287,6 +288,7 @@ BUGS
         
         function showPopup(def){
             if (!popup) {
+                analytics.track(info.getUser(), "Showed Guide Popup", {title: def.title});
                 popup = document.body.appendChild(document.createElement("div"));
                 popup.className = "thingy-popup"
                 popup.title = def.title;
