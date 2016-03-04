@@ -109,7 +109,7 @@ BUGS
             { 
                 query: ".outline", width: 320, attachment: RIGHT, where: LEFT, 
                 color: "blue",
-                title: "File functions list and structure", 
+                title: "Get an outline of your code", 
                 body: "The Outline panel shows a full list of functions and definitions in your file so you can quickly navigate through your file without reading every line of code. Use ${key:outline} to open the panel and navigate to any definition file system by typing part of the name. The outline view has support for over a dozen languages.<br /><br /><a href='https://docs.c9.io/docs/supported-languages' target='_blank'>See All Supported Languages</a>" 
             },
             // "Debugger", 
