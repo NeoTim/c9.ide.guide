@@ -6,7 +6,6 @@ define(function(require, exports, module) {
     main.provides = ["guide"];
     return main;
 
-// To test this run https://ide.c9.io/bradydowling/guided-tour?debug=2&debug=1
 /*
 BUGS
 - [ ] start tour. complete tour. start tour. open terminal. terminal is no longer part of tour.
@@ -315,8 +314,10 @@ BUGS
                             idx = -1;
                             while (thingies[++idx] && !thingies[idx].thingy) {}
                         }
-                        if (!thingies[idx] || thingies[idx].thingy.style.display == "none") 
+                        if (!thingies[idx] || thingies[idx].thingy.style.display == "none") {
+                            settings.set("user/tour/@complete", true);
                             return hidePopup();
+                        }
                         
                         showPopup(thingies[idx]);
                     }
