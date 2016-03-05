@@ -110,8 +110,21 @@
 }
 
 .thingy-popup > p{
-    line-height: 1.3em;
-    color: #505050;
+    line-height: 1.4em;
+    color: #5F5F5F;
+    font-size: 1.1em;
+}
+.thingy-popup.blue p a {
+    font-size: 13px;
+}
+.thingy-popup.blue p a {
+    background: #2C91DE;
+}
+.thingy-popup.green p a {
+    background: #7FB959;
+}
+.thingy-popup.orange p a {
+    background: #E2B013;
 }
 
 .thingy-popup > .tourButtons {
@@ -191,7 +204,7 @@
     transform: rotate(-45deg);
 }
 
-.thingy-po4up.balloon-right .balloon {
+.thingy-popup.balloon-right .balloon {
     right: -14px;
     left: auto;
     top: 30px;
