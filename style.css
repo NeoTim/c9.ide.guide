@@ -118,13 +118,13 @@
     font-size: 13px;
 }
 .thingy-popup.blue p a {
-    background: #2C91DE;
+    color: #2C91DE;
 }
 .thingy-popup.green p a {
-    background: #7FB959;
+    color: #7FB959;
 }
 .thingy-popup.orange p a {
-    background: #E2B013;
+    color: #E2B013;
 }
 
 .thingy-popup > .tourButtons {
