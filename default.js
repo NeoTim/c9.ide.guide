@@ -86,7 +86,7 @@ define(function(require, exports, module) {
             {
                 name: "run", 
                 query: ".runbtn",
-                width: 300,
+                width: 310,
                 attachment: TOP,
                 where: BOTTOM,
                 color: "green",

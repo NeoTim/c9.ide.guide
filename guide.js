@@ -356,6 +356,7 @@ define(function(require, exports, module) {
                 }
                 
                 def.thingy.style.display = "block";
+                def.shown = false;
             });
 
             emit("show");
