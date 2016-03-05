@@ -37,6 +37,7 @@ BUGS
         var POPUP_MARGIN = 17;
         
         var thingies, popup, showing, currentPopup;
+        var timer, listen;
 
         function load() {
             menus.addItemByPath("Support/Show Guided Tour", new ui.item({
@@ -232,7 +233,6 @@ BUGS
                             while (thingies[++idx] && !thingies[idx].thingy) {}
                         }
                         if (!thingies[idx] || thingies[idx].thingy.style.display == "none") {
-                            settings.set("user/tour/@complete", true);
                             return hidePopup();
                         }
                         
@@ -275,13 +275,16 @@ BUGS
                     currentPopup.shown = true;
                 }
                 currentPopup.thingy.classList.remove("active");
+                
+                if (!onlyCurrent)
+                    emit("close", currentPopup);
+                    
                 currentPopup = null;
             }
             
             popup.style.display = "none";
         }
         
-        var timer, listen;
         function enable(){
             timer = setInterval(check, 1000);
             document.body.addEventListener("mouseup", delayCheck);
@@ -335,16 +338,25 @@ BUGS
             setTimeout(check, 500);
         }
 
-        function show() {
+        function show(list) {
             if (!c9.isReady) 
-                return c9.on("ready", function(){ setTimeout(show); });
+                return c9.on("ready", function(){ 
+                    setTimeout(function(){ show(list); }); 
+                });
             
             draw();
 
             thingies.forEach(function(def){
-                if (!def.thingy) return;
+                if (!def.thingy || list && list[def.name]) {
+                    if (def.thingy)
+                        def.thingy.style.display = "none";
+                    return;
+                }
                 
-                if (!def.el.offsetWidth && !def.el.offsetHeight) {
+                if (!def.el)
+                    drawThingy(def);
+                
+                else if (!def.el.offsetWidth && !def.el.offsetHeight) {
                     delete def.el;
                     return;
                 }
@@ -371,7 +383,6 @@ BUGS
             hidePopup();
 
             currentPopup = null;
-            settings.set("user/tour/@complete", true);
 
             emit("hide");
             showing = false;
@@ -391,6 +402,8 @@ BUGS
             popup = null;
             showing = null;
             currentPopup = null;
+            timer = null;
+            listen = null;
         });
 
         /***** Register and define API *****/
