@@ -206,14 +206,14 @@ BUGS
                 analytics.track(info.getUser(), "Showed Guide Popup", {title: def.title});
                 popup = document.body.appendChild(document.createElement("div"));
                 popup.className = "thingy-popup"
-                popup.title = def.title;
+                // popup.title = def.title;
                 
                 popup.innerHTML = "<div class='balloon'></div>"
                     + "<span class='close'></span>" 
                     + "<span class='title'></span>" 
                     + "<p></p>"
                     + "<div class='tourButtons'>"
-                        + "<a href='javascript:void(0)' class='skip'>End Tour</a>"
+                        + "<a href='javascript:void(0)' class='skip' title='Reopen the tour via the Help menu'>End Tour</a>"
                     + "</div>";
                 
                 var buttons = popup.querySelector(".tourButtons");
