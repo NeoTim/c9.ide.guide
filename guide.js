@@ -6,12 +6,6 @@ define(function(require, exports, module) {
     main.provides = ["guide"];
     return main;
 
-/*
-BUGS
-- [ ] start tour. complete tour. start tour. open terminal. terminal is no longer part of tour.
-- [ ] start tour. complete tour. start tour. + thingy no longer slides to correct position.
-*/
-
     function main(options, imports, register) {
         var Plugin = imports.Plugin;
         var ui = imports.ui;

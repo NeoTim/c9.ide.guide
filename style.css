@@ -129,6 +129,7 @@
 
 .thingy-popup > .tourButtons {
     text-align: right;
+    padding-top: 10px;
 }
 
 .thingy-popup .skip {
