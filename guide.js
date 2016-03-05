@@ -233,7 +233,7 @@ define(function(require, exports, module) {
                         showPopup(thingies[idx]);
                     }
                 });
-                btnDone.oCaption.parentNode.innerHTML = "Next <span style='font-size: 1.3em;display: inline-block;vertical-align: top;'>&#x21E5;</span>";
+                btnDone.oCaption.parentNode.innerHTML = "Next <span class='arrow'>&#x21E5;</span>";
                 
                 popup.querySelector(".close").onclick = function(){
                     hidePopup();
