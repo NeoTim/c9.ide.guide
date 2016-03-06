@@ -97,8 +97,8 @@ define(function(require, exports, module) {
                 name: "share", 
                 query: ".c9-share",
                 width: 300,
-                attachment: TOP | LEFT,
-                where: BOTTOM | LEFT,
+                attachment: TOP,
+                where: BOTTOM,
                 color: "orange",
                 title: "Share your work with anyone",
                 body: "Click here to invite others to view or edit your code. Here you'll also find your application URL, which you can use to view or share your running app.<br /><br /><a href='https://docs.c9.io/docs/share-a-workspace' target='_blank'>More about Sharing a Workspace</a>"
