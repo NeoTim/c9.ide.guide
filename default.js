@@ -161,7 +161,7 @@ define(function(require, exports, module) {
             settings.on("read", function(){
                 settings.setDefaults("user/tour", [["default-complete", false]]);
                 
-                var dateGuideDeployed = new Date(2015, 3, 3).getTime();
+                var dateGuideDeployed = new Date(2016, 3, 3).getTime();
                 if (!settings.getBool("user/tour/@default-complete") && info.getUser().date_add > dateGuideDeployed)
                     guide.show(settings.getJson("user/tour/default"));
             });
