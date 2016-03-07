@@ -197,8 +197,8 @@ define(function(require, exports, module) {
         }
         
         function showPopup(def){
+            analytics.track("Showed Guide Popup", {title: def.name});
             if (!popup) {
-                analytics.track("Showed Guide Popup", {title: def.name});
                 popup = document.body.appendChild(document.createElement("div"));
                 popup.className = "thingy-popup"
                 // popup.title = def.title;
