@@ -21,6 +21,7 @@ define(function(require, exports, module) {
         var LEFT = 1 << 2;
         var BOTTOM = 1 << 3;
         var TOP = 1 << 4;
+        var FEATURE_DEPLOYED = new Date(2016, 2, 3).getTime();
         
         var allThingies = [
             {
@@ -161,8 +162,7 @@ define(function(require, exports, module) {
             settings.on("read", function(){
                 settings.setDefaults("user/tour", [["default-complete", false]]);
                 
-                var dateGuideDeployed = new Date(2016, 3, 3).getTime();
-                if (!settings.getBool("user/tour/@default-complete") && info.getUser().date_add > dateGuideDeployed)
+                if (!settings.getBool("user/tour/@default-complete") && info.getUser().date_add > FEATURE_DEPLOYED)
                     guide.show(settings.getJson("user/tour/default"));
             });
         }
