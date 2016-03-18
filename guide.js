@@ -261,6 +261,9 @@ define(function(require, exports, module) {
             thingy.classList.add("active");
             setPosition(popup, pos, def, popup.offsetWidth, popup.offsetHeight, POPUP_MARGIN);
             
+            if (def.onshow)
+                def.onshow();
+            
             currentPopup = def;
         }
         

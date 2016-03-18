@@ -88,6 +88,16 @@ define(function(require, exports, module) {
                         })) return;
                     return t.aml.$button;
                 },
+                onshow: function(){
+                    var t;
+                    if (!tabManager.getTabs().some(function(tab) {
+                        if (tab.title == "Apex Force.com" || tab.title == "Immediate (Apex Force.com)") {
+                            t = tab;
+                            return true
+                        };
+                    })) return;
+                    tabManager.activateTab(t);
+                },
                 width: 460,
                 attachment: BOTTOM,
                 where: TOP,
@@ -105,7 +115,17 @@ define(function(require, exports, module) {
                                 return true
                             };
                         })) return;
-                    return t.aml.$button.parentNode;
+                    return t.aml.$button;
+                },
+                onshow: function(){
+                    var t;
+                    if (!tabManager.getTabs().some(function(tab) {
+                        if (tab.title == "Query Force.com" || tab.title == "Immediate (Query Force.com)") {
+                            t = tab;
+                            return true
+                        };
+                    })) return;
+                    tabManager.activateTab(t);
                 },
                 width: 400,
                 attachment: BOTTOM,
