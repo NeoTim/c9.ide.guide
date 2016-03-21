@@ -307,6 +307,9 @@ define(function(require, exports, module) {
                     def.thingy = def.el = null;
                 }
                 else {
+                    // [NO] This was breaking IDE in the cs50 workspace.
+                    if (!def || !def.del) return;
+                    
                     var pos = def.el.getBoundingClientRect();
                     setPosition(def.thingy, pos, def, 
                         THINGY_SIZE, THINGY_SIZE, THINGY_MARGIN, true);
