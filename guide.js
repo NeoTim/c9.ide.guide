@@ -252,6 +252,8 @@ define(function(require, exports, module) {
             popup.querySelector("span.title").innerHTML = def.title;
             popup.querySelector("p").innerHTML = def.body;
             
+            if (!def.thingy) return;
+            
             var thingy = def.thingy;
             var pos = thingy.getBoundingClientRect();
             
@@ -308,7 +310,7 @@ define(function(require, exports, module) {
                 }
                 else {
                     // [NO] This was breaking IDE in the cs50 workspace.
-                    if (!def || !def.del) return;
+                    if (!def || !def.el) return;
                     
                     var pos = def.el.getBoundingClientRect();
                     setPosition(def.thingy, pos, def, 
