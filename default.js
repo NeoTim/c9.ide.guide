@@ -50,7 +50,7 @@ define(function(require, exports, module) {
                 query: ".plus_tab_button",
                 width: 360,
                 attachment: LEFT,
-                where: RIGHT | BOTTOM,
+                where: BOTTOM,
                 color: "green",
                 title: "Open a file, terminal, or recent tabs",
                 body: "Click the plus button to open a new tab for a file or terminal instance. You can also open an immediate window for testing Javascript expressions or reopen recently closed tabs.<br /><br /><a href='https://docs.c9.io/docs/immediate-window' target='_blank'>More about the Immediate Window</a>"
