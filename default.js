@@ -62,8 +62,8 @@ define(function(require, exports, module) {
                     if (!tabManager.getTabs().some(function(tab) {
                             if (tab.editorType == "terminal") {
                                 t = tab;
-                                return true
-                            };
+                                return true;
+                            }
                         })) return;
                     return t.aml.$button;
                 },
@@ -149,17 +149,17 @@ define(function(require, exports, module) {
         function load() {
             guide.add(allThingies);
             
-            guide.on("hide", function(e){
+            guide.on("hide", function(e) {
                 settings.set("user/tour/@default-complete", true);
             });
             
-            guide.on("close", function(e){
+            guide.on("close", function(e) {
                 var completed = settings.getJson("user/tour/default") || {};
                 completed[e.name] = 1;
                 settings.setJson("user/tour/default", completed);
             });
             
-            settings.on("read", function(){
+            settings.on("read", function() {
                 settings.setDefaults("user/tour", [["default-complete", false]]);
                 
                 if (!settings.getBool("user/tour/@default-complete") && info.getUser().date_add > FEATURE_DEPLOYED)

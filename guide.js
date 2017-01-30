@@ -55,14 +55,14 @@ define(function(require, exports, module) {
 
         /***** Methods *****/
         
-        function add(t){
+        function add(t) {
             if (!(t instanceof Array))
                 t = [t];
             
             if (!thingies)
                 thingies = t;
             else {
-                t.forEach(function(i){ 
+                t.forEach(function(i) { 
                     thingies.push(i); 
                     if (!drawn)
                         drawThingy(i);
@@ -76,11 +76,11 @@ define(function(require, exports, module) {
             htmlNode.style.top = 
             htmlNode.style.bottom = "";
             
-            function right(){ return window.innerWidth - pos.left - pos.width; }
-            function bottom(){ return window.innerHeight - pos.top - pos.height; }
+            function right() { return window.innerWidth - pos.left - pos.width; }
+            function bottom() { return window.innerHeight - pos.top - pos.height; }
             
-            var offsetW = isThingy ? width/2 : 0;
-            var offsetH = isThingy ? height/2 : 0;
+            var offsetW = isThingy ? width / 2 : 0;
+            var offsetH = isThingy ? height / 2 : 0;
             var corW = isThingy ? 0 : width;
             var corH = isThingy ? 0 : height;
             var maxW = window.innerWidth - corW - margin;
@@ -129,7 +129,7 @@ define(function(require, exports, module) {
             if (!isThingy) updateBalloon(htmlNode, def);
         }
         
-        function updateBalloon(htmlNode, def){
+        function updateBalloon(htmlNode, def) {
             var h;
             
             htmlNode.classList.remove("balloon-right", "balloon-left", 
@@ -175,7 +175,7 @@ define(function(require, exports, module) {
             var pos = el.getBoundingClientRect();
             setPosition(thingy, pos, def, THINGY_SIZE, THINGY_SIZE, THINGY_MARGIN, true);
             
-            thingy.onclick = function(){ togglePopup(def); };
+            thingy.onclick = function() { togglePopup(def); };
             
             def.body = def.body.replace(/\$\{key:([a-zA-Z]+)\}/g, function(match, name) {
                 var key = commands.getHotkey(name);
@@ -188,7 +188,7 @@ define(function(require, exports, module) {
             def.thingy = thingy;
         }
         
-        function togglePopup(def){
+        function togglePopup(def) {
             if (popup && currentPopup === def) {
                 hidePopup(true);
                 return;
@@ -196,11 +196,11 @@ define(function(require, exports, module) {
             showPopup(def);
         }
         
-        function showPopup(def){
-            analytics.track("Showed Guide Popup", {title: def.name});
+        function showPopup(def) {
+            analytics.track("Showed Guide Popup", { title: def.name });
             if (!popup) {
                 popup = document.body.appendChild(document.createElement("div"));
-                popup.className = "thingy-popup"
+                popup.className = "thingy-popup";
                 // popup.title = def.title;
                 
                 popup.innerHTML = "<div class='balloon'></div>"
@@ -212,13 +212,13 @@ define(function(require, exports, module) {
                     + "</div>";
                 
                 var buttons = popup.querySelector(".tourButtons");
-                popup.querySelector(".skip").onclick = function(){ hide(); };
+                popup.querySelector(".skip").onclick = function() { hide(); };
                 var btnDone = new ui.button({
                     htmlNode: buttons,
                     skin: "btn-default-css3",
                     style: "display:inline-block;",
                     "class": "btn-green",
-                    onclick: function(){
+                    onclick: function() {
                         var idx = thingies.indexOf(currentPopup);
                         
                         while (thingies[++idx] && !thingies[idx].thingy) {}
@@ -235,9 +235,9 @@ define(function(require, exports, module) {
                 });
                 btnDone.oCaption.parentNode.innerHTML = "Next <span class='arrow'>&#x21E5;</span>";
                 
-                popup.querySelector(".close").onclick = function(){
+                popup.querySelector(".close").onclick = function() {
                     hidePopup();
-                }
+                };
             }
             else {
                 hidePopup();
@@ -267,7 +267,7 @@ define(function(require, exports, module) {
             currentPopup = def;
         }
         
-        function hidePopup(onlyCurrent){
+        function hidePopup(onlyCurrent) {
             if (currentPopup) {
                 if (!onlyCurrent) {
                     currentPopup.thingy.style.display = "none";
@@ -284,18 +284,18 @@ define(function(require, exports, module) {
             popup.style.display = "none";
         }
         
-        function enable(){
+        function enable() {
             timer = setInterval(check, 1000);
             document.body.addEventListener("mouseup", delayCheck);
         }
         
-        function disable(){
+        function disable() {
             clearInterval(timer);
             document.body.removeEventListener("mouseup", delayCheck);
         }
         
-        function check(){
-            thingies.forEach(function(def){
+        function check() {
+            thingies.forEach(function(def) {
                 if (def.shown) return;
                 
                 if (!def.thingy) {
@@ -336,19 +336,19 @@ define(function(require, exports, module) {
                 }
             });
         }
-        function delayCheck(){
+        function delayCheck() {
             setTimeout(check, 500);
         }
 
         function show(list) {
             if (!c9.isReady) 
-                return c9.on("ready", function(){ 
-                    setTimeout(function(){ show(list); }); 
+                return c9.on("ready", function() { 
+                    setTimeout(function() { show(list); }); 
                 });
             
             draw();
 
-            thingies.forEach(function(def){
+            thingies.forEach(function(def) {
                 if (!def.thingy || list && list[def.name]) {
                     if (def.thingy)
                         def.thingy.style.display = "none";
@@ -376,7 +376,7 @@ define(function(require, exports, module) {
         function hide() {
             if (!drawn) return;
 
-            thingies.forEach(function(def){
+            thingies.forEach(function(def) {
                 if (!def.thingy) return;
                 
                 def.thingy.style.display = "none";
